@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+import java.util.Scanner;
+
+/**
+ *
+ * @author LENOVO
+ */
+public class IMT {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double tinggi, berat, imt;
+        String cek;
+        System.out.println("~Pengukur Indeks Massa Tubuh~");
+        do {
+            System.out.print("Masukkan tinggi anda dalam meter: ");
+            tinggi = input.nextDouble();
+            System.out.print("Masukkan berat badan anda dalam kilogram: ");
+            berat = input.nextDouble();
+
+            //rumus
+            imt = berat / (tinggi * tinggi);
+            System.out.println("IMT anda adalah " + imt);
+            if (imt <= 18.5) {
+                System.out.println("Berat badan anda kurang");
+            } else if (imt <= 25) {
+                System.out.println("Berat badan anda normal");
+            } else if (imt <= 27) {
+                System.out.println("Berat badan berlebih");
+            } else if (imt > 27) {
+                System.out.println("Anda obesitas");
+            }
+            System.out.println();
+            System.out.println("Terima kasih telah menggunakan jasa kami");
+            System.out.println("Apa anda ingin mengecek ulang? (ya/tidak)");
+            cek = input.next();
+        } while (cek.equals("ya"));
+    }
+}
